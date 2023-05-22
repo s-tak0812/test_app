@@ -6,11 +6,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="mt-5">
+      <ul>
+        <li>
+          <%= link_to "top", root_path %>
+        </li>
+        <li>
+          <%= link_to "event", events_path %>
+        </li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>

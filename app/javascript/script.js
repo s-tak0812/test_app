@@ -1,10 +1,10 @@
 $(function () {
-    $('.tooltip').hide();
+    $('.uitooltip').hide();
     $('td').hover(
     function () {
-        $(this).children('.tooltip').fadeIn('fast');
+        $(this).children('.uitooltip').fadeIn('fast');
     },
     function () {
-        $(this).children('.tooltip').fadeOut('fast');
+        $(this).children('.uitooltip').fadeOut('fast');
     });
 });
