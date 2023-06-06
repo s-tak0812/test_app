@@ -10,12 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_22_092603) do
+ActiveRecord::Schema.define(version: 2023_06_06_134247) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "todo_contents", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "todo_list_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "todo_lists", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
