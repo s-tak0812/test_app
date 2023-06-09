@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2023_06_06_134247) do
   end
 
   create_table "todo_contents", force: :cascade do |t|
-    t.integer "customer_id", null: false
     t.integer "todo_list_id", null: false
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -29,7 +28,6 @@ ActiveRecord::Schema.define(version: 2023_06_06_134247) do
   end
 
   create_table "todo_lists", force: :cascade do |t|
-    t.integer "customer_id", null: false
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
