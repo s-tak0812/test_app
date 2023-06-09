@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-center">
         <h3 class="bg-light"><strong>新規メモ</strong></h3>
       </div>
-      <%= render 'public/shared/error_messages', resource: @todo_content %>
+      <%= render 'shared/error_messages', resource: @todo_content %>
       <!--投稿フォーム-->
       <div>
         <%= form_with model:@todo_content do |f| %>

@@ -56,6 +56,26 @@ class TodoContentsController < ApplicationController
   end
 
 
+  def new_content
+    @todo_content = TodoContent.new
+    @todo_list_id = params[:id]
+  end
+
+
+  def add_content
+    todo_content = TodoContent.new(todo_content_params)
+    # @todo_list_id = params[:id]
+
+    # todo_content.todo_list_id = @todo_list_id
+
+    if todo_content.save
+      redirect_to todo_list_path(todo_content.todo_list_id)
+    else
+      render :new
+    end
+  end
+
+
   private
 
   def todo_content_params
