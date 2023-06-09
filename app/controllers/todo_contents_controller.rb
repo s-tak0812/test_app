@@ -1,4 +1,4 @@
-class Public::TodoContentsController < ApplicationController
+class TodoContentsController < ApplicationController
 
   def new
     @todo_content = TodoContent.new
