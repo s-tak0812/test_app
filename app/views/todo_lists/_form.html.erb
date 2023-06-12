@@ -1,0 +1,20 @@
+<%= form_with model: add_content, url: url, local: false do |f| %>
+  <%= f.hidden_field :todo_list_id, value: todo_list_id %>
+    <table class="table table-borderless">
+      <tr>
+        <td>
+          <%= f.label "メモ内容", class: "control-label" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.text_area :content, placeholder: "内容", class: "form-control" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.submit "追加", class: 'btn btn-outline-success' %>
+        </td>
+      </tr>
+    </table>
+<% end %>
