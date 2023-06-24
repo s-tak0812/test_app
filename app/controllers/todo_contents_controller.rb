@@ -55,25 +55,23 @@ class TodoContentsController < ApplicationController
     redirect_to request.referer
   end
 
+  # todo_listのshowにあるtodo_contentの新規投稿ができるリンク
+  def new_content
+    @todo_content = TodoContent.new
+    @todo_list = TodoList.find(params[:id])
+  end
 
-  # def new_content
-  #   @todo_content = TodoContent.new
-  #   @todo_list_id = params[:id]
-  # end
+  # todo_contentのみの新規投稿
+  def content_create
+    @todo_content = TodoContent.new(todo_content_params)
 
-
-  # def add_content
-  #   todo_content = TodoContent.new(todo_content_params)
-  #   # @todo_list_id = params[:id]
-
-  #   # todo_content.todo_list_id = @todo_list_id
-
-  #   if todo_content.save
-  #     redirect_to todo_list_path(todo_content.todo_list_id)
-  #   else
-  #     render :new
-  #   end
-  # end
+    if @todo_content.save
+      redirect_to todo_list_path(@todo_content.todo_list_id)
+    else
+      @todo_list = TodoList.find(params[:id])
+      render :new_content
+    end
+  end
 
 
   private
